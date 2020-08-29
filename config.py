@@ -1,4 +1,5 @@
-
+# functionality
+pressure_check_time_interval = 1
 # PWM config
 pwm_pin = 33  # BOARD
 pwm_freq = 100
@@ -9,3 +10,4 @@ initial_pressure_hysteresis = 200  # hPa
 digital_outputs_dic = {
     'tank_full_led': 15,  # BOARD
 }
+
