@@ -22,9 +22,16 @@ class RpiCompressor():
         if ai_value > self.pressure_limit:
             self.gpio_driver.stop_pwm()
             self.state = False
+            self.set_led_value(self.state)
         elif ai_value < self.pressure_limit - self.pressure_hysteresis:
             self.gpio_driver.set_pwm()
             self.state = True
+            self.set_led_value(self.state)
         return self.state
+
+    # set led digital output
+    def set_led_value(self, value):
+        self.gpio_driver.set_do_value('tank_full_led', value)
+
 
 
